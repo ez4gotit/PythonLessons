@@ -1,16 +1,18 @@
 import os
 import time
 from pynput import keyboard 
-def clear():
+def clean():
     print('\033[2J\033[H')
 
+scene = []
 
-
-def clear(sleepTime):
+def clean(sleepTime):
     
     time.sleep(sleepTime)
     print('\033[2J\033[H')
-
+def cleanScene():
+    scene.clear()
+    
 
 def printTriangle(height, xOffset, yOffset, ch):
     widthDown = 2 * (height - 1) + 1
@@ -30,7 +32,7 @@ def printTriangle(height, xOffset, yOffset, ch):
 
 def printChar(ch, i):
     for j in range(i):
-        print(ch, end='')
+        scene.append(ch)
 
 
 
@@ -78,9 +80,14 @@ def printSquare(xx,yy,xOffset,yOffset,character):
     printEnd()
 while True:
     xPos, yPos,  size = Input(xPos=xPos, yPos=yPos, size=size)
-    clear(0.1)
+    clean(0.01)
+    cleanScene()
     printTriangle(size, xPos, yPos, " ")
     #printSquare(size,size, xPos,yPos+size, " ")
+ 
+    scene.append("a")
+    print(scene)
+    print((''.join(scene)))
 
 
-    
+
