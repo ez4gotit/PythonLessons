@@ -16,11 +16,7 @@ class Question(models.Model):
     def is_Question(self):
         return self.question_text.__contains__("?")
     
-    def __init__(self, val):
-        self.val = val
 
-    def __add__(self, o):
-        return self.val + o.val
 
 
 
