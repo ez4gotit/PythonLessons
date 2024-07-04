@@ -1,0 +1,22 @@
+<div class = "header">
+    <a href = "/testapp/"><<</a>
+</div>
+
+<style>
+.li{
+    background-color: aqua;
+}
+.header{
+    background-color: bisque;
+}
+</style>
+
+{% if question %}
+
+<h1>{{question.question_author.username}}</h1>
+<a>{{question.question_text}}</a>
+<a>{{question.question_date}}</a>
+
+{% else %}
+<a >Error 404</a>
+{% endif %}

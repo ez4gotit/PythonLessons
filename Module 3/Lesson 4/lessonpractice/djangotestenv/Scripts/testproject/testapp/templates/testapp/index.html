@@ -1,0 +1,21 @@
+{% if questions %}
+
+<ul>
+
+    {% for question in questions %}
+    <li><a class = "a" href = "/testapp/{{ question.id }}/">{{question.question_text}}</a>
+
+    </li>
+    {% endfor %}
+
+</ul>
+<style>.a{
+    color: red;
+    padding: 100px;
+    font-size: 40px;
+    background-color: blue;
+
+}</style>
+{% else %}
+<h1>Вопросов нет!</h1>
+{% endif %}

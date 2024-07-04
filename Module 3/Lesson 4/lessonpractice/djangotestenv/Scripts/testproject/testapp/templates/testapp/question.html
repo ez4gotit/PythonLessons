@@ -1,0 +1,9 @@
+{% if question %}
+
+<h1>{{question.question_author}}</h1>
+<a>{{question.question_text}}</a>
+<a>{{question.question_date}}</a>
+
+{% else %}
+<a >Error 404</a>
+{% endif %}
