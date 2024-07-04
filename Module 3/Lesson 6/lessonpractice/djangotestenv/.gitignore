@@ -1,15 +1,13 @@
 # created by virtualenv automatically
 
+#Folder Scripts of Venv is ignored
 /Scripts/*
 
-!/Scripts/testproject*
+#There is exception to include testproject folder
+!/[Ss]cripts/[Tt]estproject*
 
-/Scripts/*.gitignore
+/[Ll]ib*
 
-!.gitignore
-
-
-/Lib*
 *pyvenv*
 
-*sqlite3
+*.sqlite3
