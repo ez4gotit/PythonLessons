@@ -1,0 +1,48 @@
+<div class = "header">
+    <a>Форум Вопросов</a>
+</div>
+
+<style>
+.li{
+    background-color: aqua;
+}
+.header{
+    background-color: bisque;
+    text-align: center;
+}
+.avatar{
+    width: 50px;
+    height: 50px;
+}
+</style>
+
+{% if questions %}
+<table><thead>
+    <tr>
+      <th >Номер</th>
+      <th >Название</th>
+      <th >Автор</th>
+      <th > </th>
+      <th > </th>
+    </tr></thead>
+  <tbody>
+
+    {% for question in questions %}
+    <tr>
+        <td><a>{{question.id}}</a></td>
+        <td>{{question.question_name}}</td>
+        <td>{{question.question_author.username}}</td>
+        <td><a href = "/testapp/{{ question.id }}/">>></a></td>
+        <td><img src = "{{question.question_author.avatar}}" class ="avatar"></img></td>
+      </tr>
+
+    {% endfor %}
+</tbody>
+</table>
+<button> Нажми! </button>
+{% else %}
+<h1>Вопросов нет!</h1>
+{% endif %}
+<script>
+    //alert("");
+</script>
